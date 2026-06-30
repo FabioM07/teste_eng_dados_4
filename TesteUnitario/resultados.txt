@@ -1,0 +1,9 @@
+Foram implementados testes unitários para a função transform_silver, responsável pela deduplicação dos clientes e validação do telefone na camada Silver.
+
+Cenários testados:
+1. Happy path: telefone válido permanece preenchido.
+2. Caso de borda: cliente com mais de uma atualização mantém apenas o registro mais recente.
+3. Caso de erro: telefone fora do padrão esperado é convertido para nulo.
+
+Execução esperada:
+pytest TesteUnitario/unit_test.py

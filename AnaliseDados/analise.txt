@@ -1,0 +1,11 @@
+Top 5 atualizacoes
+
+cod_cliente	qtd_atualizacoes	ultima_atualizacao
+396	5	2025-04-02
+479	5	2024-08-16
+878	5	2025-03-30
+855	4	2024-12-15
+71	3	2025-01-31
+
+Média de idade
+51.65

@@ -1,0 +1,7 @@
+A arquitetura proposta utiliza o AWS Database Migration Service (DMS) para realizar a captura contínua de alterações (CDC) do banco de dados MySQL, enviando os dados para a camada Bronze do Data Lake no Amazon S3.
+
+Na camada Bronze, um AWS Glue Job realiza a ingestão dos dados, aplicando a padronização inicial, definição de schema, renomeação de colunas e particionamento dos arquivos, preservando o histórico das informações.
+
+Em seguida, um novo processamento gera a camada Silver, onde são aplicadas as regras de negócio, como deduplicação de clientes, validação do formato dos telefones e demais verificações de qualidade dos dados, disponibilizando uma visão confiável para consumo.
+
+A camada Gold é destinada aos dados consolidados e agregados para análises e relatórios. O AWS Glue Data Catalog é responsável pelo catálogo das tabelas e partições do Data Lake, enquanto o AWS Lake Formation e o AWS IAM realizam a governança e o controle de acesso aos dados por usuário. Por fim, ferramentas como Amazon Athena e Amazon QuickSight podem consumir as informações para consultas e visualizações analíticas.
